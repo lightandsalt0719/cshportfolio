@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSH | Unreal Cinematic Portfolio</title>
+
+  <style>
+
+    .gray-img{
+      filter: grayscale(100%);
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#050505;
+      color:#f2f2f2;
+      font-family:Arial, Helvetica, sans-serif;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    .container{
+      width:96%;
+      max-width:1800px;
+      margin:auto;
+    }
+
+    /* NAV */
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      z-index:999;
+      background:rgba(0,0,0,0.45);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:22px 0;
+    }
+
+    .logo{
+      font-size:14px;
+      letter-spacing:4px;
+      font-weight:700;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:28px;
+      font-size:13px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      opacity:0.8;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+      position:relative;
+      display:flex;
+      align-items:flex-end;
+      padding-bottom:80px;
+      overflow:hidden;
+    }
+
+    .hero video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:0.55;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:
+      linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+    }
+
+    .hero-sub{
+      font-size:12px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      opacity:0.7;
+      margin-bottom:18px;
+    }
+
+    .hero-title{
+      font-size:clamp(48px, 8vw, 120px);
+      line-height:0.95;
+      font-weight:700;
+      max-width:1000px;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:120px 0;
+    }
+
+    .section-title{
+      font-size:14px;
+      letter-spacing:4px;
+      margin-bottom:50px;
+      opacity:0.6;
+      text-transform:uppercase;
+    }
+
+  .Year-category{
+  grid-column: 1 / -1;
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#aaa;
+  margin:60px 0 0;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.grid .Year-category:first-child{
+  margin-top:0;
+}
+
+    /* GRID */
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:28px;
+      width:100%;
+    }
+
+    .card{
+      position:relative;
+      overflow:hidden;
+      background:#111;
+      border-radius:18px;
+      width:100%;
+    }
+
+    .card img{
+      transition:transform 0.6s ease;
+    }
+
+    .card:hover img{
+      transform:scale(1.03);
+    }
+
+    .card-info{
+      position:absolute;
+      left:24px;
+      bottom:24px;
+      z-index:2;
+    }
+
+    .card-title{
+      font-size:22px;
+      margin-bottom:8px;
+      font-weight:600;
+    }
+
+    .card-desc{
+      font-size:13px;
+      opacity:0.7;
+      letter-spacing:1px;
+    }
+
+    .card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+      linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+    }
+
+
+    /* VIDEO */
+
+    .video-wrapper{
+      position:relative;
+      width:100%;
+      padding-top:56.25%;
+      border-radius:20px;
+      overflow:hidden;
+    }
+
+    .video-wrapper iframe{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      border:none;
+    }
+
+    /* ABOUT */
+
+    .about{
+      max-width:800px;
+    }
+
+    .about h2{
+      font-size:40px;
+      margin-bottom:24px;
+    }
+
+    .about p{
+      line-height:1.8;
+      opacity:0.75;
+      font-size:16px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:60px 0;
+      border-top:1px solid rgba(255,255,255,0.08);
+      text-align:center;
+      font-size:12px;
+      letter-spacing:2px;
+      opacity:0.5;
+    }
+
+    @media (max-width:900px){
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .nav-links{
+        gap:14px;
+        font-size:11px;
+      }
+
+      .hero{
+        padding-bottom:50px;
+      }
+
+      section{
+        padding:80px 0;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <div class="logo">
+        CSH
+      </div>
+
+      <div class="nav-links">
+        <a href="#works">Works</a>
+        <a href="#cinematic">REEL</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <!-- Replace with your mp4 -->
+    <video autoplay muted loop playsinline>
+      <source src="hero.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+
+      <div class="hero-sub">
+        Cinematic Lighting Artist
+      </div>
+
+      <h1 class="hero-title">
+        LIGHTING<br>
+        LOOKDEV<br>
+        CINEMATICS
+      </h1>
+
+    </div>
+
+  </header>
+
+  <!-- WORKS -->
+
+<section id="works">
+  <div class="container">
+
+    <div class="section-title">
+      Studio Works
+    </div>
+
+    <!-- YEAR -->
+    <div class="grid">
+
+  <div class="Year-category">
+    2023
+  </div>
+
+      <!-- 01 -->
+      <a href="projects/KDS2/KDS2.html" class="card">
+        <img src="thumnail/KDS2_thumnail.jpg" alt="">
+        <div class="card-info">
+          <div class="card-title">KartRider:Drift Season 2</div>
+          <div class="card-desc">Lighting / Cinematic</div>
+        </div>
+      </a>
+
+      <!-- 02 -->
+      <a href="projects/KDS3/KDS3.html" class="card">
+        <img src="thumnail/KDS3_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">KartRider:Drift Season 3</div>
+          <div class="card-desc">Lookdev / Unreal Engine</div>
+        </div>
+      </a>
+
+      <!-- 03 -->
+      <a href="projects/KDS4/KDS4.html" class="card">
+        <img src="thumnail/KDS4_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">KartRider:Drift Season 4</div>
+          <div class="card-desc">Environment / Cinematic</div>
+        </div>
+      </a>
+
+      <!-- 04 -->
+      <a href="projects/KDS5/KDS5.html" class="card">
+        <img src="thumnail/KDS5_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">KartRider:Drift Season 5</div>
+          <div class="card-desc">Lighting / UE5</div>
+        </div>
+      </a>
+
+      <!-- 05 -->
+      <a href="projects/KDS6/KDS6.html" class="card">
+        <img src="thumnail/KDS6_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">KartRider:Drift Season 6</div>
+          <div class="card-desc">Lookdev / Real-time</div>
+        </div>
+      </a>
+
+       <!-- YEAR -->
+       <div class="Year-category">
+       2024
+       </div>
+
+      <!-- 06 -->
+      <a href="projects/LN/LN.html" class="card">
+        <img src="thumnail/LN_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">LordNine</div>
+          <div class="card-desc">Cinematic / UE5</div>
+        </div>
+      </a>
+
+      <!-- 07 -->
+      <a href="projects/DND/DND.html" class="card">
+        <img src="thumnail/DND_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">Dark And Darker Mobile</div>
+          <div class="card-desc">Lighting / Sequence</div>
+        </div>
+      </a>
+
+      <!-- 08 -->
+      <a href="projects/SV/SV.html" class="card">
+        <img src="thumnail/SV_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">SUPERVIVE:CrazyTrain</div>
+          <div class="card-desc">Cinematic / Atmosphere</div>
+        </div>
+      </a>
+
+       <!-- YEAR -->
+       <div class="Year-category">
+       2025
+       </div>
+
+      <!-- 09 -->
+      <a href="projects/ARC/ARC.html" class="card">
+        <img src="thumnail/ARC_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">Architect Land of Exiles</div>
+          <div class="card-desc">Lookdev / Rendering</div>
+        </div>
+      </a>
+
+      <!-- 10 -->
+      <a href="projects/EVIL/EVIL.html" class="card">
+        <img src="thumnail/EVIL_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">Evilbane</div>
+          <div class="card-desc">Environment / UE5</div>
+        </div>
+      </a>
+
+      <!-- 11 -->
+      <a href="projects/SOL/SOL.html" class="card">
+        <img src="thumnail/SOL_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">SOL:Enchant Part 1</div>
+          <div class="card-desc">Lighting / Path Tracing</div>
+        </div>
+      </a>     
+      
+
+       <!-- YEAR -->
+       <div class="Year-category">
+       2026
+       </div>
+
+      <!-- 12 -->
+      <a href="projects/VAL/VAL.html" class="card">
+        <img src="thumnail/VAL_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">Valhalla Survival</div>
+          <div class="card-desc">Lookdev / Unreal</div>
+        </div>
+      </a>
+
+      <!-- 13 -->
+      <a href="projects/SEVEN/SEVEN.html" class="card">
+        <img src="thumnail/SEVEN_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">The Seven Deadly Sins:Origin</div>
+          <div class="card-desc">Realtime / Cinematic</div>
+        </div>
+      </a>
+
+      <!-- 14 -->
+      <a href="projects/ESDE/ESDE.html" class="card">
+        <img src="thumnail/ESDE_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">Monster StarDive:Esde</div>
+          <div class="card-desc">UE5 / Lighting</div>
+        </div>
+      </a>
+
+      <!-- 15 -->
+      <a href="projects/MINA/MINA.html" class="card">
+        <img src="thumnail/MINA_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">Monster StarDive:Mina</div>
+          <div class="card-desc">Lookdev / Sequence</div>
+        </div>
+      </a>
+
+      <!-- 16 -->
+      <a href="projects/RAVEN/RAVEN.html" class="card">
+        <img src="thumnail/RAVEN_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">Raven2</div>
+          <div class="card-desc">Cinematic / UE5</div>
+        </div>
+      </a>
+
+      <!-- 17 -->
+      <a href="projects/ZEUS/ZEUS.html" class="card">
+        <img src="thumnail/ZEUS_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">Zeus</div>
+          <div class="card-desc">Lighting / Rendering</div>
+        </div>
+      </a>
+
+      <!-- 17 -->
+      <a href="projects/SOL3/SOL3.html" class="card">
+        <img src="thumnail/SOL3_thumnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">SOL:Enchant Part 3</div>
+          <div class="card-desc">Lighting / Rendering</div>
+        </div>
+      </a>
+
+  
+</section>
+
+  <!-- VIDEO -->
+
+  <section id="cinematic">
+    <div class="container">
+
+      <div class="section-title">
+        Cinematic Reel
+      </div>
+
+        <!-- YEAR -->
+       <div class="Year-category">
+       2022-2024
+       </div>
+
+      <div class="video-wrapper">
+
+        <!-- Vimeo or YouTube Embed -->
+        <iframe
+          src="https://www.youtube.com/embed/I8MsHWukV8E?si=eXArKFb1rVNKKAmg"
+          allow="autoplay; fullscreen"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <div class="about">
+
+        <div class="section-title">
+          About
+        </div>
+
+        <h2>
+          Cinematic & Lighting Artist
+        </h2>
+
+        <p>
+            언리얼 엔진 기반의 시네마틱 라이팅, 룩디벨롭먼트,
+  실시간 렌더링 워크플로우를 전문으로 합니다.
+  실사, 반실사, 서브컬처를 아우르는 다양한 스타일의 영상 제작 경험을 바탕으로,
+  프로젝트의 방향성에 맞는 완성도 높은 비주얼을 구현합니다.
+  오프라인 렌더링과 실시간 렌더링을 모두 경험하며 쌓은 폭넓은 렌더링 이해를 통해,
+  현실적인 분위기와 구도, 시네마틱한 퀄리티를 갖춘
+  몰입감 있는 비주얼 스토리텔링을 만들어갑니다.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <div class="container">
+
+      <div class="section-title">
+        Contact
+      </div>
+
+      <div class="about">
+
+        <p>
+          EMAIL<br><br>
+          uecsh0719@gmail.com
+
+          <br><br><br>
+
+          PHONE<br><br>
+          010 4633 5794        
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 CSH Portfolio
+  </footer>
+
+</body>
+</html>
