@@ -1,3 +1,64 @@
+.reel-tabs{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:36px;
+  margin-bottom:36px;
+}
+
+.reel-tab{
+  position:relative;
+  background:none;
+  border:none;
+  color:#f2f2f2;
+  font-size:13px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  opacity:0.5;
+  cursor:pointer;
+  padding:0 0 10px;
+}
+
+.reel-tab::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width:0;
+  height:1px;
+  background:#f2f2f2;
+  transform:translateX(-50%);
+  transition:width 0.3s ease;
+}
+
+.reel-tab.active{
+  opacity:1;
+}
+
+.reel-tab.active::after{
+  width:100%;
+}
+
+.client-name{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:#cfcfcf;
+  opacity:0.72;
+  margin-bottom:28px;
+  padding:6px 12px;
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:999px;
+}
+
+.detail-note{
+  font-size:12px;
+  letter-spacing:1px;
+  opacity:0.65;
+  margin-bottom:24px;
+}
+
 .detail-grid img{
   cursor:zoom-in;
 }

@@ -82,3 +82,26 @@ if(detailImages.length > 0){
     }
   });
 }
+
+// CINEMATIC REEL TABS
+
+const reelTabs = document.querySelectorAll(".reel-tab");
+const reelFrame = document.getElementById("reelFrame");
+
+const reelVideos = [
+  "https://www.youtube.com/embed/I8MsHWukV8E?si=eXArKFb1rVNKKAmg",
+  "https://www.youtube.com/embed/I8MsHWukV8E?si=eXArKFb1rVNKKAmg"
+];
+
+if(reelTabs.length > 0 && reelFrame){
+  reelTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const reelIndex = Number(tab.dataset.reel);
+
+      reelTabs.forEach((item) => item.classList.remove("active"));
+      tab.classList.add("active");
+
+      reelFrame.src = reelVideos[reelIndex];
+    });
+  });
+}

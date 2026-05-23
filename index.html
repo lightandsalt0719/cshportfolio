@@ -294,6 +294,7 @@
     }
 
   </style>
+  <link rel="stylesheet" href="common/lightbox.css">
 </head>
 
 <body>
@@ -433,7 +434,7 @@
       <a href="projects/SV/SV.html" class="card">
         <img src="thumbnail/SV_thumbnail.webp" alt="">
         <div class="card-info">
-          <div class="card-title">SUPERVIVE:CrazyTrain</div>
+          <div class="card-title">SUPERVIVE : CrayTrain</div>
           <div class="card-desc">Cinema4D / Octane / Animation(Previz) / Lighting / Rendering</div>
         </div>
       </a>
@@ -465,10 +466,19 @@
       <a href="projects/SOL/SOL.html" class="card">
         <img src="thumbnail/SOL_thumbnail.webp" alt="">
         <div class="card-info">
-          <div class="card-title">SOL:Enchant Part 1</div>
+          <div class="card-title">SOL:Enchant EP 1</div>
           <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
         </div>
-      </a>     
+      </a>
+      
+       <!-- 11 -->
+      <a href="projects/SOL2/SOL2.html" class="card">
+        <img src="thumbnail/SOL2_thumbnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-title">SOL:Enchant EP 2</div>
+          <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
+        </div>
+      </a>   
       
 
        <!-- YEAR -->
@@ -538,10 +548,10 @@
           <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
         </div>
       </a>
-
-  
+    </div>
+  </div>
 </section>
-
+  
   <!-- VIDEO -->
 
   <section id="cinematic">
@@ -551,19 +561,19 @@
         Cinematic Reel
       </div>
 
-        <!-- YEAR -->
-       <div class="Year-category">
-       2022-2024
-       </div>
+      <div class="reel-tabs">
+      <button class="reel-tab active" type="button" data-reel="0">2022-2024</button>
+      <button class="reel-tab" type="button" data-reel="1">2025-2026</button>
+      </div>
 
-      <div class="video-wrapper">
-
-        <!-- Vimeo or YouTube Embed -->
-        <iframe
-          src="https://www.youtube.com/embed/I8MsHWukV8E?si=eXArKFb1rVNKKAmg"
-          allow="autoplay; fullscreen"
-          allowfullscreen>
-        </iframe>
+        <div class="video-wrapper">
+      <iframe
+      id="reelFrame"
+      src="https://www.youtube.com/embed/I8MsHWukV8E?si=eXArKFb1rVNKKAmg"
+      allow="autoplay; fullscreen"
+      allowfullscreen>
+      </iframe>
+</div>
 
       </div>
 
@@ -644,6 +654,7 @@
     "thumbnail/ARC_thumbnail.webp",
     "thumbnail/EVIL_thumbnail.webp",
     "thumbnail/SOL_thumbnail.webp",
+  
     "thumbnail/VAL_thumbnail.webp",
     "thumbnail/SEVEN_thumbnail.webp",
     "thumbnail/ESDE_thumbnail.webp",
@@ -686,6 +697,6 @@
 
   setInterval(changeHeroBackground, 4500);
 </script>
-
+<script src="common/lightbox.js"></script>
 </body>
 </html>
