@@ -105,3 +105,22 @@ if(reelTabs.length > 0 && reelFrame){
     });
   });
 }
+
+// DETAIL IMAGE TABS
+
+const shotTabs = document.querySelectorAll(".shot-tab");
+const shotPanels = document.querySelectorAll(".shot-panel");
+
+if(shotTabs.length > 0 && shotPanels.length > 0){
+  shotTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const targetId = tab.dataset.shot;
+
+      shotTabs.forEach((item) => item.classList.remove("active"));
+      shotPanels.forEach((panel) => panel.classList.remove("active"));
+
+      tab.classList.add("active");
+      document.getElementById(targetId).classList.add("active");
+    });
+  });
+}

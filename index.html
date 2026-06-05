@@ -159,71 +159,88 @@
     }
 
   .Year-category{
-  grid-column: 1 / -1;
   font-size:13px;
   letter-spacing:3px;
   text-transform:uppercase;
   color:#aaa;
-  margin:60px 0 0;
+  margin:0 0 18px;
   padding-bottom:12px;
   border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-.grid .Year-category:first-child{
-  margin-top:0;
-}
+
 
     /* GRID */
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:28px;
-      width:100%;
-    }
+   .grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:18px;
+  width:100%;
+}
+
 
     .card{
       position:relative;
-      overflow:hidden;
-      background:#111;
-      border-radius:18px;
-      width:100%;
-    }
+  overflow:hidden;
+  background:#111;
+  border-radius:14px;
+  width:100%;
+}
 
     .card img{
-      transition:transform 0.6s ease;
-    }
+       width:100%;
+  height:auto;
+  display:block;
+  transition:transform 0.6s ease;
+}
 
     .card:hover img{
       transform:scale(1.03);
-    }
-
+}
     .card-info{
       position:absolute;
-      left:24px;
-      bottom:24px;
-      z-index:2;
-    }
+  left:16px;
+  bottom:16px;
+  z-index:2;
+  max-width:calc(100% - 32px);
+}
+
+.card-year{
+  display:inline-block;
+  font-size:10px;
+  letter-spacing:1.6px;
+  font-weight:700;
+  color:#ffffff;
+  opacity:0.9;
+  margin-bottom:7px;
+  padding:3px 7px;
+  border:1px solid rgba(255,255,255,0.35);
+  border-radius:999px;
+  background:rgba(0,0,0,0.25);
+}
 
     .card-title{
-      font-size:22px;
-      margin-bottom:8px;
-      font-weight:600;
-    }
+      font-size:16px;
+  margin-bottom:5px;
+  font-weight:600;
+  line-height:1.25;
+}
 
     .card-desc{
-      font-size:13px;
-      opacity:0.7;
-      letter-spacing:1px;
-    }
+      font-size:11px;
+  opacity:0.7;
+  letter-spacing:0.5px;
+  line-height:1.35;
+}
 
     .card::after{
       content:"";
-      position:absolute;
-      inset:0;
-      background:
-      linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
-    }
+  position:absolute;
+  inset:0;
+  background:
+  linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+}
 
 
     /* VIDEO */
@@ -272,32 +289,49 @@
       opacity:0.5;
     }
 
-    @media (max-width:900px){
 
-      .grid{
-        grid-template-columns:1fr;
-      }
 
-      .nav-links{
-        gap:14px;
-        font-size:11px;
-      }
+@media (max-width:1300px){
+  .grid{
+    grid-template-columns:repeat(3, 1fr);
+  }
+}
 
-      .hero{
-        padding-bottom:50px;
-      }
+@media (max-width:900px){
+  .grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
 
-      section{
-        padding:80px 0;
-      }
+  .nav-links{
+    gap:14px;
+    font-size:11px;
+  }
 
-    }
+  .hero{
+    padding-bottom:50px;
+  }
+
+  section{
+    padding:80px 0;
+  }
+}
+
+@media (max-width:600px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+
 
   </style>
   <link rel="stylesheet" href="common/lightbox.css">
 </head>
 
 <body>
+
+  <a href="https://www.gamejob.co.kr/User/Resume/View?R_NO=386382" class="floating-link" target="_blank">
+  VIew RESUME
+</a>
 
   <!-- NAV -->
 
@@ -355,17 +389,13 @@
       Studio Works
     </div>
 
-    <!-- YEAR -->
-    <div class="grid">
-
-  <div class="Year-category">
-    2023
-  </div>
-
+    <!-- YEAR 2023-->
+     <div class="grid">
       <!-- 01 -->
       <a href="projects/KDS2/KDS2.html" class="card">
         <img src="thumbnail/KDS2_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2023</div>
           <div class="card-title">KartRider:Drift Season 2</div>
           <div class="card-desc">Cinema4D / Octane / Lighting / Rendering</div>
         </div>
@@ -375,6 +405,7 @@
       <a href="projects/KDS3/KDS3.html" class="card">
         <img src="thumbnail/KDS3_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2023</div>
           <div class="card-title">KartRider:Drift Season 3</div>
           <div class="card-desc">Cinema4D / Octane / Lighting / Rendering</div>
         </div>
@@ -384,6 +415,7 @@
       <a href="projects/KDS4/KDS4.html" class="card">
         <img src="thumbnail/KDS4_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2023</div>
           <div class="card-title">KartRider:Drift Season 4</div>
           <div class="card-desc">Cinema4D / Octane / Animation(Previz) / Lighting / Rendering</div>
         </div>
@@ -393,6 +425,7 @@
       <a href="projects/KDS5/KDS5.html" class="card">
         <img src="thumbnail/KDS5_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2023</div>
           <div class="card-title">KartRider:Drift Season 5</div>
           <div class="card-desc">Cinema4D / Octane / Animation(Previz) / Lighting / Rendering</div>
         </div>
@@ -402,20 +435,18 @@
       <a href="projects/KDS6/KDS6.html" class="card">
         <img src="thumbnail/KDS6_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2023</div>
           <div class="card-title">KartRider:Drift Season 6</div>
           <div class="card-desc">Cinema4D / Octane / Lighting / Rendering</div>
         </div>
       </a>
 
-       <!-- YEAR -->
-       <div class="Year-category">
-       2024
-       </div>
+        <!-- YEAR 2024 -->
 
-      <!-- 06 -->
       <a href="projects/LN/LN.html" class="card">
         <img src="thumbnail/LN_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2024</div>
           <div class="card-title">LordNine</div>
           <div class="card-desc">Cinema4D / Octane / Lighting / Rendering</div>
         </div>
@@ -425,6 +456,7 @@
       <a href="projects/DND/DND.html" class="card">
         <img src="thumbnail/DND_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2024</div>
           <div class="card-title">Dark And Darker Mobile</div>
           <div class="card-desc">Cinema4D / Octane / Animation(Previz) / Lighting / Rendering</div>
         </div>
@@ -434,31 +466,30 @@
       <a href="projects/SV/SV.html" class="card">
         <img src="thumbnail/SV_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2024</div>
           <div class="card-title">SUPERVIVE : CrayTrain</div>
           <div class="card-desc">Cinema4D / Octane / Animation(Previz) / Lighting / Rendering</div>
         </div>
       </a>
 
-       <!-- YEAR -->
-       <div class="Year-category">
-       2025
-       </div>
+         <!-- YEAR 2025 -->
 
-      <!-- 09 -->
       <a href="projects/ARC/ARC.html" class="card">
         <img src="thumbnail/ARC_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2025</div>
           <div class="card-title">Architect Land of Exiles</div>
-          <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
+          <div class="card-desc">Unreal Engine 5 / Lighting / Rendering</div>
         </div>
       </a>
-
+     
       <!-- 10 -->
       <a href="projects/EVIL/EVIL.html" class="card">
         <img src="thumbnail/EVIL_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2025</div>
           <div class="card-title">Evilbane</div>
-          <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
+          <div class="card-desc">Unreal Engine 5 / Lighting / Rendering</div>
         </div>
       </a>
 
@@ -466,8 +497,9 @@
       <a href="projects/SOL/SOL.html" class="card">
         <img src="thumbnail/SOL_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2025</div>
           <div class="card-title">SOL:Enchant EP 1</div>
-          <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
+          <div class="card-desc">Unreal Engine 5 / Lighting / Rendering</div>
         </div>
       </a>
       
@@ -475,23 +507,21 @@
       <a href="projects/SOL2/SOL2.html" class="card">
         <img src="thumbnail/SOL2_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2025</div>
           <div class="card-title">SOL:Enchant EP 2</div>
-          <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
+          <div class="card-desc">Unreal Engine 5 / Lighting / Rendering</div>
         </div>
       </a>   
-      
 
-       <!-- YEAR -->
-       <div class="Year-category">
-       2026
-       </div>
+       <!-- YEAR 2026 -->
 
       <!-- 12 -->
       <a href="projects/VAL/VAL.html" class="card">
         <img src="thumbnail/VAL_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2026</div>
           <div class="card-title">Valhalla Survival</div>
-          <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
+          <div class="card-desc">Unreal Engine 5 / Lighting / Rendering</div>
         </div>
       </a>
 
@@ -499,8 +529,9 @@
       <a href="projects/SEVEN/SEVEN.html" class="card">
         <img src="thumbnail/SEVEN_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2026</div>
           <div class="card-title">The Seven Deadly Sins:Origin</div>
-          <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
+          <div class="card-desc">Unreal Engine 5 / Lighting / Rendering</div>
         </div>
       </a>
 
@@ -508,8 +539,9 @@
       <a href="projects/ESDE/ESDE.html" class="card">
         <img src="thumbnail/ESDE_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2026</div>
           <div class="card-title">Monster StarDive:Esde</div>
-          <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
+          <div class="card-desc">Unreal Engine 5 / Lighting / Rendering</div>
         </div>
       </a>
 
@@ -517,8 +549,9 @@
       <a href="projects/MINA/MINA.html" class="card">
         <img src="thumbnail/MINA_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2026</div>
           <div class="card-title">Monster StarDive:Mina</div>
-          <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
+          <div class="card-desc">Unreal Engine 5 / Lighting / Rendering</div>
         </div>
       </a>
 
@@ -526,8 +559,9 @@
       <a href="projects/RAVEN/RAVEN.html" class="card">
         <img src="thumbnail/RAVEN_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2026</div>
           <div class="card-title">Raven2</div>
-          <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
+          <div class="card-desc">Unreal Engine 5 / Lighting / Rendering</div>
         </div>
       </a>
 
@@ -535,8 +569,9 @@
       <a href="projects/ZEUS/ZEUS.html" class="card">
         <img src="thumbnail/ZEUS_thumbnail.webp" alt="">
         <div class="card-info">
+          <div class="card-year">2026</div>
           <div class="card-title">Zeus</div>
-          <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
+          <div class="card-desc">Unreal Engine 5 / Lighting / Rendering</div>
         </div>
       </a>
 
@@ -544,13 +579,47 @@
       <a href="projects/SOL3/SOL3.html" class="card">
         <img src="thumbnail/SOL3_thumbnail.webp" alt="">
         <div class="card-info">
-          <div class="card-title">SOL:Enchant Part 3</div>
-          <div class="card-desc">Unreal Engine 5 / lighting / Rendering</div>
+          <div class="card-year">2026</div>
+          <div class="card-title">SOL:Enchant EP 3</div>
+          <div class="card-desc">Unreal Engine 5 / Lighting / Rendering</div>
         </div>
       </a>
     </div>
   </div>
 </section>
+
+<!--collaborative work-->
+
+<section id="works">
+  <div class="container">
+
+    <div class="section-title">
+      Independent Works
+    </div>
+
+       <div class="grid">
+
+   <a href="projects/LC/LC.html" class="card">
+        <img src="thumbnail/LC_thumbnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-year">2025</div>
+          <div class="card-title">LightingCamp_Works</div>
+          <div class="card-desc">Unreal Engine 5 / Lighting / Rendering</div>
+        </div>
+      </a>
+
+    <a href="projects/C_KAMI/C_KAMI.html" class="card">
+        <img src="thumbnail/C_KAMI_thumbnail.webp" alt="">
+        <div class="card-info">
+          <div class="card-year">2025</div>
+          <div class="card-title">LightingCamp_Kamikakushi</div>
+          <div class="card-desc">Unreal Engine 5 / Level / Lighting </div>
+        </div>
+      </a>
+
+   
+
+      </div>
   
   <!-- VIDEO -->
 
