@@ -84,53 +84,6 @@ if(detailImages.length > 0){
 }
 
 
-// BREAKDOWN CARDS
-
-function cubicBezier077(t){
-  const p1x=0.77,p1y=0,p2x=0.18,p2y=1;
-  let s=0,e=1,m=0;
-  for(let i=0;i<12;i++){
-    m=(s+e)/2;
-    const x=3*m*(1-m)*(1-m)*p1x+3*m*m*(1-m)*p2x+m*m*m;
-    if(x<t) s=m; else e=m;
-  }
-  const u=m;
-  return 3*u*(1-u)*(1-u)*p1y+3*u*u*(1-u)*p2y+u*u*u;
-}
-
-document.querySelectorAll('.card.has-breakdown').forEach(card => {
-  const line = card.querySelector('.bd-divider line');
-  if(!line) return;
-
-  const IDLE  = { x1: 281.6, x2: 230.4 };
-  const HOVER = { x1: 185.6, x2: 134.4 };
-  const DURATION = 600;
-
-  let animId = null, startTime = null;
-  let fromX1 = IDLE.x1, fromX2 = IDLE.x2;
-  let toX1 = IDLE.x1, toX2 = IDLE.x2;
-
-  function animate(ts){
-    if(!startTime) startTime = ts;
-    const t = Math.min((ts - startTime) / DURATION, 1);
-    const e = cubicBezier077(t);
-    line.setAttribute('x1', fromX1 + (toX1 - fromX1) * e);
-    line.setAttribute('x2', fromX2 + (toX2 - fromX2) * e);
-    if(t < 1) animId = requestAnimationFrame(animate);
-  }
-
-  function startAnim(tx1, tx2){
-    if(animId) cancelAnimationFrame(animId);
-    fromX1 = parseFloat(line.getAttribute('x1'));
-    fromX2 = parseFloat(line.getAttribute('x2'));
-    toX1 = tx1; toX2 = tx2;
-    startTime = null;
-    animId = requestAnimationFrame(animate);
-  }
-
-  card.addEventListener('mouseenter', () => startAnim(HOVER.x1, HOVER.x2));
-  card.addEventListener('mouseleave', () => startAnim(IDLE.x1, IDLE.x2));
-});
 
 
 // CINEMATIC REEL TABS

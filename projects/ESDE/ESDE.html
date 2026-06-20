@@ -139,7 +139,18 @@
     *작업한 컷들 중 일부입니다. Selected shots from the project.
     </p>
 
-    <div class="detail-grid">
+ <div class="shot-tabs">
+  <button class="shot-tab active" type="button" data-shot="final">
+    Final Rendering Cut
+  </button>
+  <button class="shot-tab" type="button" data-shot="breakdown">
+    Breakdown
+  </button>
+</div>
+
+<div class="shot-panel active" id="final">
+  <div class="detail-grid">
+
 
     <!-- MAIN IMAGE -->
 
@@ -151,7 +162,7 @@
 
     <!-- THIRD IMAGE -->
 
-    <img src="images/ESDE_detail03.webp" alt="">
+    <img src="images/ESDE_detail03_1.webp" alt="">
 
     <!-- FOURTH IMAGE -->
 
@@ -164,14 +175,186 @@
     <!-- SIXTH IMAGE -->
 
     <img src="images/ESDE_detail06.webp" alt="">
-    <img src="images/ESDE_detail07.webp" alt="">
-    <img src="images/ESDE_detail08.webp" alt="">
+    <img src="images/ESDE_detail07_1.webp" alt="">
+    <img src="images/ESDE_detail08_1.webp" alt="">
     <img src="images/ESDE_detail09.webp" alt="">
     <img src="images/ESDE_detail10.webp" alt="">
     <img src="images/ESDE_detail11.webp" alt="">
     <img src="images/ESDE_detail12.webp" alt="">  
 
     </div>
+    </div>
+
+      <div class="shot-panel" id="breakdown">
+
+  <!-- HEADER -->
+  <div style="position:relative; margin-bottom:52px; border-radius:18px; overflow:hidden;">
+    <img src="images/BD_01.webp" alt="" style="margin-bottom:0; filter:brightness(0.6) blur(1px); transform:scale(1.04); border-radius:0; display:block; width:100%;">
+    <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+  <span style="font-size:15px; font-weight:700; letter-spacing:5px; text-transform:uppercase; color:#fff; opacity:0.75;">Monster Stardive Esde Character PV</span>
+  <span style="font-size:clamp(52px, 8vw, 96px); font-weight:700; letter-spacing:0.06em; color:#fff; line-height:1; text-transform:uppercase;">BREAKDOWN</span>
+</div>
+  </div>
+
+  <!-- 01 LIGHTING PROCESS -->
+  <div class="bd-section">
+    <div class="bd-section-label">01 — Lighting Process</div>
+    <div class="bd-process-grid">
+      <div class="bd-step">
+        <img src="images/ESDE_BD_process01.webp" alt="">
+        <span class="bd-step-tag">01</span>
+      </div>
+      <div class="bd-step">
+        <img src="images/ESDE_BD_process02.webp" alt="">
+        <span class="bd-step-tag">02</span>
+      </div>
+      <div class="bd-step">
+        <img src="images/ESDE_BD_process03.webp" alt="">
+        <span class="bd-step-tag">03</span>
+      </div>
+      <div class="bd-step">
+        <img src="images/ESDE_BD_process04.webp" alt="">
+        <span class="bd-step-tag">04</span>
+      </div>
+    </div>
+  </div>
+
+<!-- 02 PBL & EXPOSURE -->
+  <div class="bd-section">
+    <div class="bd-section-label">02 — PBL &amp; Exposure Values</div>
+    <div class="bd-test-grid">
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_pbl01.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Exposure</span>
+            <span class="bd-verdict adopt">조정</span>
+          </div>
+          <div class="bd-test-title">Anime 스타일의 노출값 </div>
+          <div class="bd-test-desc">Anime 스타일의 노출값은 크게 신경을 쓰지 않았다, 대신 씬의 깊이감과 캐릭터의 그림자 쉐잎, 라이팅에 집중할 수 있었다.</div>
+          <div class="bd-test-result"></div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_pbl02.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Cut Scene</span>
+            <span class="bd-verdict adopt">조정</span>
+          </div>
+          <div class="bd-test-title">개발사의 Cut Scene Lighting Setting</div>
+          <div class="bd-test-desc">일곱개의 대죄와 마찬가지로 게임엔진 일부를 받아 작업할 수 있었는데, 라이팅 소스를 파악하다가 Cut Scene을 발견할 수 있었다. 몬스터길들이기 역시 환경세팅블루프린트가 있었지만, 따로 사용하진 않았고 기본 Light Actor를 이용해 라이팅했다.
+           </div>
+          <div class="bd-test-result"> Cut Scene의 PPV와 라이팅 옵션 값들을 전부 파악한 뒤에 참고하며 시네마틱 라이팅을 수월하게 진행할 수 있었다.</div>
+        </div>
+      </div>
+
+ 
+
+    </div>
+  </div>
+
+  <!-- 03 CHALLENGES -->
+  <div class="bd-section">
+    <div class="bd-section-label">03 — Challenges</div>
+    <div class="bd-test-grid">
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_ch01.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">01 · Focus</span>
+            <span class="bd-verdict discard">이슈</span>
+          </div>
+          <div class="bd-test-title">포커싱 아웃으로인한 계단현상</div>
+          <div class="bd-test-desc">Anime style이라 그런지 잘 모르겠지만 포커스가 조금만 더 나가면 모델링 아웃라인에 계단현상이 일어나는 문제가 있었다.</div>
+          <div class="bd-test-result">→ 컷마다 카메라 Aperture 값을 세밀하게 조절하여 캐릭터 외곽에 계단현상이 일어나지 않도록 조절해줬다.</div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_ch02.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">02 · Post Process Material </span>
+            <span class="bd-verdict discard">이슈</span>
+          </div>
+          <div class="bd-test-title">캐릭터 아웃라인을 위한 Post Process Material의 사용</div>
+          <div class="bd-test-desc">개발사 요청으로 캐릭터 아웃라인을 넣어줘야 했었는데, 구버전이어서 렌더했을 때 잘 안보였었고 다시 요청하여 새로운 버전을 받았다. 다른 프로젝트에서도 Post Process Material을 잘 활용한다면 확실히 더 풍부하게 표현할 수 있을 것 같다.</div>
+          <div class="bd-test-result">→ Material Parameter Collection을 통해 컷마다 가장 알맞은 굵기로 조정해주었다.</div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_ch03.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">03 · Polish</span>
+            <span class="bd-verdict discard">조정</span>
+          </div>
+          <div class="bd-test-title">다양한 이슈들을 조정, 영상검수</div>
+          <div class="bd-test-desc">살이 옷과 겹치는 것, 메쉬가 부족해서 각져보이는 것, 머리카락이 얼굴에 파고드는 것, 캐릭터 옷의 Normal값이 너무 센 것 등 지나가면 지나갈 수 있는 것들에 프레임 하나하나 수정 및 재렌더</div>
+          <div class="bd-test-result">→ 개발사·게임사 피드백에서 자주 나오는 포인트들을 미리 체크리스트로 정리해, 요청 전에 영상 검수를 마치는 습관을 들이려 했다. 요청 없이 먼저 점검하는 태도가 주도적인 작업의 핵심이라고 생각한다.</div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- 04 TESTS -->
+  <div class="bd-section">
+    <div class="bd-section-label">04 — Tests &amp; Iterations</div>
+    <div class="bd-test-grid">
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_test01.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Fog</span>
+            <span class="bd-verdict adopt">R&D</span>
+          </div>
+          <div class="bd-test-title">Fog Material</div>
+          <div class="bd-test-desc">Fog Material로 공간감과 깊이감을 더했다.</div>
+          <div class="bd-test-result">→ Sphere모양의 Fog와 Plane Fog가 있었다. 주로 배경엔 Sphere Shape의 Fog를 배치하여 공간감과 깊이감을 카메라 앞 부분엔 Plane Fog를 설치하여 Bloom기능으로 활용했다.
+            개발사의 Cut Scene에서 아이디어를 차용하여 시네마틱에도 적용했다. 항상 Spot이나 Point Light Actor로 God ray 혹은 Bloom 등 Post를 표현하곤 했는데, 이 Plane과 Sphere Fog의 활용도가 무궁무진하다. Master Material을 참고하여 제작해봐야겠다. </div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_test02.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Lighting Track System</span>
+            <span class="bd-verdict adopt">R&D</span>
+          </div>
+          <div class="bd-test-title">캐릭터를 따라가는 Light Actor</div>
+          <div class="bd-test-desc">일곱개의 대죄에서 사용하던 Light BluePrint의 아이디어를 차용해 빈 Actor를 생성한 뒤 Rotation을 절댓값으로 바꾸고 캐릭터의 Rig중 Head에 붙여 사용했다.</div>
+          <div class="bd-test-result">→ 모든 라이팅 시퀀스의 폴더트리에 Tracking용 빈 Actor를 포함시키니 확실히 작업효율이 많이 올라갔다.</div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+   <!-- 05 NOTES -->
+  <div class="bd-section">
+    <div class="bd-section-label">04 — Notes</div>
+    <div class="bd-notes">
+
+      <p>일곱개의 대죄 다음으로 진행한 두 번째 서브컬쳐 Anime style 시네마틱 영상이었다. 확실히 개발사마다 캐릭터에 Lighting을 했을 때 느낌이 달랐고 환경 구성도 달랐다. Anime 룩의 라이팅에 점차 관심을 크게 가지기 시작했다. 2D 기반이라 하여 절대 단순하지 않았으며
+        [젠레스 존 제로], [명조] 등 굵직한 서브컬쳐, Anime style의 게임 시네마틱 트레일러를 보았고 생각보다 깊고 넓은 세계가 있다는 걸 깨달았다. Realistic Cinematic에 뒤쳐지지 않는 충분한 깊이감과 연출이 녹아들어있었고 아직 내가 작은 세계에 갇혀있다는 느낌이 들 정도였다.
+        다양한 스타일로 이루어진 환경과 Lighting을 보며 좀 더 눈을 키워야겠다는 다짐을 하게되었다.
+      </p>
+
+      <p>이제 서브컬쳐라 부를 수 있을까. 시장만 보면 메인 스트림이다.🤨</p>
+     
+    </div>
+  </div>
+
 
     <!-- VIDEO -->
 
