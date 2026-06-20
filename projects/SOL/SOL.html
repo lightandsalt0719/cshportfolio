@@ -140,11 +140,21 @@
     <p class="detail-note">
     *작업한 컷들 중 일부입니다. Selected shots from the project.
     </p>
-    <div class="detail-grid">
+ <div class="shot-tabs">
+  <button class="shot-tab active" type="button" data-shot="final">
+    Final Rendering Cut
+  </button>
+  <button class="shot-tab" type="button" data-shot="breakdown">
+    Breakdown
+  </button>
+</div>
+
+<div class="shot-panel active" id="final">
+  <div class="detail-grid">
 
     <!-- MAIN IMAGE -->
 
-    <img src="images/SOL_detail01.webp" alt="">
+    <img src="images/SOL_detail01_1.webp" alt="">
 
     <!-- SECOND IMAGE -->
 
@@ -168,11 +178,193 @@
     <img src="images/SOL_detail07.webp" alt="">
     <img src="images/SOL_detail08.webp" alt="">
     <img src="images/SOL_detail09.webp" alt="">
-    <img src="images/SOL_detail10.webp" alt="">
-    <img src="images/SOL_detail11.webp" alt="">
+    <img src="images/SOL_detail10_1.webp" alt="">
+    <img src="images/SOL_detail11_1.webp" alt="">
     <img src="images/SOL_detail12.webp" alt=""> 
 
     </div>
+    </div>
+    
+<div class="shot-panel" id="breakdown">
+
+  <!-- HEADER -->
+  <div style="position:relative; margin-bottom:52px; border-radius:18px; overflow:hidden;">
+    <img src="images/BD_01.webp" alt="" style="margin-bottom:0; filter:brightness(0.4) blur(2px); transform:scale(1.04); border-radius:0; display:block; width:100%;">
+    <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+  <span style="font-size:15px; font-weight:700; letter-spacing:5px; text-transform:uppercase; color:#fff; opacity:0.75;">SOL : ENCHANT EP.01</span>
+  <span style="font-size:clamp(52px, 8vw, 96px); font-weight:700; letter-spacing:0.06em; color:#fff; line-height:1; text-transform:uppercase;">BREAKDOWN</span>
+</div>
+  </div>
+
+  <!-- 01 LIGHTING PROCESS -->
+  <div class="bd-section">
+    <div class="bd-section-label">01 — Lighting Process</div>
+    <div class="bd-process-grid">
+      <div class="bd-step">
+        <img src="images/SOL_BD_process01.webp" alt="">
+        <span class="bd-step-tag">01</span>
+      </div>
+      <div class="bd-step">
+        <img src="images/SOL_BD_process02.webp" alt="">
+        <span class="bd-step-tag">02</span>
+      </div>
+      <div class="bd-step">
+        <img src="images/SOL_BD_process03.webp" alt="">
+        <span class="bd-step-tag">03</span>
+      </div>
+      <div class="bd-step">
+        <img src="images/SOL_BD_process04.webp" alt="">
+        <span class="bd-step-tag">04</span>
+      </div>
+    </div>
+  </div>
+
+<!-- 02 PBL & EXPOSURE -->
+  <div class="bd-section">
+    <div class="bd-section-label">02 — PBL &amp; Exposure Values</div>
+    <div class="bd-test-grid">
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_pbl01.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Exposure</span>
+            <span class="bd-verdict adopt">조정</span>
+          </div>
+          <div class="bd-test-title">PBL physically based lighting </div>
+          <div class="bd-test-desc">1930~1950 시간대에 Sun EV와 Sky EV 값을 맞춰주었다.</div>
+          <div class="bd-test-result">directional light intensity 1200 / EV min 8.5 / max 8.5 </div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_pbl02.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Mid tone 18% grey</span>
+            <span class="bd-verdict adopt">조정</span>
+          </div>
+          <div class="bd-test-title">18% grey 값의 평균은 0.13 </div>
+          <div class="bd-test-desc">18% grey 값의 평균은 0.13 정도로 0.18보다 낮지만 영상의 전반적인 어두운 분위기를 위해 유지했다.</div>
+          <div class="bd-test-result"></div>
+        </div>
+      </div>
+
+ 
+
+    </div>
+  </div>
+
+  <!-- 03 CHALLENGES -->
+  <div class="bd-section">
+    <div class="bd-section-label">03 — Challenges</div>
+    <div class="bd-test-grid">
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_ch01.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">01 · directional light</span>
+            <span class="bd-verdict discard">이슈</span>
+          </div>
+          <div class="bd-test-title">directional light를 두 개 썼을 때, Fog 문제</div>
+          <div class="bd-test-desc">character lighting을 좀 더 수월하게 하기 위해 directional light를 배경(하늘)용 인물용으로 두 개 썼는데, fog가 생각대로 제어되지 않는 현상이 발생했다. 이미 작업이 많이 진행된 상황이라 어쩔 수 없이 넘어갔지만 다음부턴 주의해야 함. </div>
+          <div class="bd-test-result">→ 다음 프로젝트에선, 하늘이 중요할 땐 HDRI를 적극 활용한다거나 인물용 라이팅으로선 spot/rect/point light actor를 활용</div>
+          <div class="bd-test-result">→ 다수의 태양을 쓰면 Hair Groom shadow에 오류 생길 가능성도 다분..</div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_ch02.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">02 · Hair Groom</span>
+            <span class="bd-verdict discard">이슈</span>
+          </div>
+          <div class="bd-test-title">Hair Groom 그림자가 제대로 안생기는 현상</div>
+          <div class="bd-test-desc">마치 빛이 투과된 것 같은 느낌처럼 그림자가 제대로 안생기는 이슈가 있었고 원인은 daylight의 deepshadow, skylight와 연관이 있었다.</div>
+          <div class="bd-test-result">→ hairstrands와 skylight가 연관된 console이 굉장히 많았는데, r.hairstrands.skylight 와 연관된 console들을 리스트업 했다.</div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_ch03.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">03 · Hair Groom</span>
+            <span class="bd-verdict discard">이슈</span>
+          </div>
+          <div class="bd-test-title">Hair Groom flickering 현상</div>
+          <div class="bd-test-desc">뷰포트에서는 괜찮으나, 렌더링만 하면 Flickering현상 발생, 주변에 너무 많은 스켈레톤이 원인이었다.</div>
+          <div class="bd-test-result">→ MovieRenderGraph를 통해 Groom을 가진 Character들만 따로 렌더링하여 합성하였다.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 04 TESTS -->
+  <div class="bd-section">
+    <div class="bd-section-label">04 — Tests &amp; Iterations</div>
+    <div class="bd-test-grid">
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_test01.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Exposure</span>
+            <span class="bd-verdict adopt">test</span>
+          </div>
+          <div class="bd-test-title">False Color를 통한 샷별 노출 분석</div>
+          <div class="bd-test-desc">False Color 뷰로 주요 캐릭터 샷 간 라이팅 밸런스를 통일했다. PPV의 컬러그레이딩LUT 옵션을 활용했다.</div>
+          <div class="bd-test-result">→ 샷 전체 노출 기준값을 확인하려 했으나, 생각보다 크게 도움되진 않는 듯, 색도 명확하지 않고</div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_test02.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">VolumetricCloud</span>
+            <span class="bd-verdict adopt">test</span>
+          </div>
+          <div class="bd-test-title">무드에 맞는 VolumetricCloudTest</div>
+          <div class="bd-test-desc">주요 캐릭터에 시선이 집중되도록 전투 씬의 키라이트 방향과 림라이트 강도를 샷별로 개별 튜닝했다.</div>
+          <div class="bd-test-result">→ 캐릭터 분리감 및 대비감 확보</div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_test03.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Groom</span>
+            <span class="bd-verdict discard">test</span>
+          </div>
+          <div class="bd-test-title">Hair Groom raytraced shadow 사용 및 최적화작업</div>
+          <div class="bd-test-desc">언리얼 공식에선 Groom의 raytraced shadow와 light의 raytraced shadow를 같이 쓰지 말라고 되어있지만, 컴퓨터의 성능으로 밀어붙여 시도했다.</div>
+          <div class="bd-test-result">→ Raytraced shadow의 유무는 Look에 큰 차이가 없긴했지만, Cinematic영상을 위해 켜서 진행했다. 물론 Flickering 현상이 동반되어 몇몇 컷은 끈 채로 진행..</div>
+        </div>
+      </div>
+
+      
+
+    </div>
+  </div>
+
+  <!-- 05 NOTES -->
+  <div class="bd-section">
+    <div class="bd-section-label">04 — Notes</div>
+    <div class="bd-notes">
+
+      <p>이 프로젝트에서 가장 많은 시간을 쏟은 건 hair groom 이슈였다. hairstrand 관련 console 관한 노하우가 없어서 하나씩 찾아가며 씨름했다.</p>
+      <p>Houdini FX 팀과의 협업에서는 운석 낙하 시퀀스의 VFX 빛이 환경에 미치는 영향을 실시간으로 맞춰가며 조율했다. 다음에는 VFX와의 라이팅 파이프라인을 초반부터 합의해두는 것이 작업 속도를 크게 높일 것 같다.</p>
+      <p>전체적으로 lighting sequence를 하나의 시퀀스로 쓰다보니 컨트롤하기 불편했다. 작업할 당시엔 몰랐으나 다음부턴 camera 한 컷당 하나의 시퀀스를 사용하는편이 여러모로 편할 것이다.(굳이 상수 key를 찍어가며 안써도 되는 것에 대해)</p>
+    </div>
+  </div>
+
+
+</div>
 
     <!-- VIDEO -->
 

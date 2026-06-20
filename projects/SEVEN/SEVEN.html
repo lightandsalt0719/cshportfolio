@@ -142,11 +142,22 @@
     *작업한 컷들 중 일부입니다. Selected shots from the project.
     </p>
 
-    <div class="detail-grid">
+ <div class="shot-tabs">
+  <button class="shot-tab active" type="button" data-shot="final">
+    Final Rendering Cut
+  </button>
+  <button class="shot-tab" type="button" data-shot="breakdown">
+    Breakdown
+  </button>
+</div>
+
+<div class="shot-panel active" id="final">
+  <div class="detail-grid">
+
 
     <!-- MAIN IMAGE -->
 
-    <img src="images/SEVEN_detail01.webp" alt="">
+    <img src="images/SEVEN_detail01_1.webp" alt="">
 
     <!-- SECOND IMAGE -->
 
@@ -166,14 +177,212 @@
     
     <!-- SIXTH IMAGE -->
 
-    <img src="images/SEVEN_detail06.webp" alt="">
-    <img src="images/SEVEN_detail07.webp" alt="">
+    <img src="images/SEVEN_detail06_1.webp" alt="">
+    <img src="images/SEVEN_detail07_1.webp" alt="">
     <img src="images/SEVEN_detail08.webp" alt=""> 
     <img src="images/SEVEN_detail09.webp" alt="">
-    <img src="images/SEVEN_detail10.webp" alt="">
+    <img src="images/SEVEN_detail10_1.webp" alt="">
 
 
     </div>
+     </div>
+
+    <div class="shot-panel" id="breakdown">
+
+  <!-- HEADER -->
+  <div style="position:relative; margin-bottom:52px; border-radius:18px; overflow:hidden;">
+    <img src="images/BD_01.webp" alt="" style="margin-bottom:0; filter:brightness(0.6) blur(1px); transform:scale(1.04); border-radius:0; display:block; width:100%;">
+    <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+  <span style="font-size:15px; font-weight:700; letter-spacing:5px; text-transform:uppercase; color:#fff; opacity:0.75;">The Seven Deadly Sins:Origin Animation Trailer</span>
+  <span style="font-size:clamp(52px, 8vw, 96px); font-weight:700; letter-spacing:0.06em; color:#fff; line-height:1; text-transform:uppercase;">BREAKDOWN</span>
+</div>
+  </div>
+
+  <!-- 01 LIGHTING PROCESS -->
+  <div class="bd-section">
+    <div class="bd-section-label">01 — Lighting Process</div>
+    <div class="bd-process-grid">
+      <div class="bd-step">
+        <img src="images/SEVEN_BD_process01.webp" alt="">
+        <span class="bd-step-tag">01</span>
+      </div>
+      <div class="bd-step">
+        <img src="images/SEVEN_BD_process02.webp" alt="">
+        <span class="bd-step-tag">02</span>
+      </div>
+      <div class="bd-step">
+        <img src="images/SEVEN_BD_process03.webp" alt="">
+        <span class="bd-step-tag">03</span>
+      </div>
+      <div class="bd-step">
+        <img src="images/SEVEN_BD_process04.webp" alt="">
+        <span class="bd-step-tag">04</span>
+      </div>
+    </div>
+  </div>
+
+<!-- 02 PBL & EXPOSURE -->
+  <div class="bd-section">
+    <div class="bd-section-label">02 — PBL &amp; Exposure Values</div>
+    <div class="bd-test-grid">
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_pbl01.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Exposure</span>
+            <span class="bd-verdict adopt">조정</span>
+          </div>
+          <div class="bd-test-title">Anime 스타일의 노출값 </div>
+          <div class="bd-test-desc">Anime 스타일의 노출값은 크게 신경을 쓰지 않았다, 대신 씬의 깊이감과 캐릭터의 그림자 쉐잎, 라이팅에 집중할 수 있었다.</div>
+          <div class="bd-test-result"></div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_pbl02.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Cumtom Engine System</span>
+            <span class="bd-verdict adopt">조정</span>
+          </div>
+          <div class="bd-test-title">개발사의 Cumtom Lighting System</div>
+          <div class="bd-test-desc">기존의 방식으로 라이팅하지 않고 개발사에서 만든 툴(LightingVolume)을 이용해 라이팅했다. 모르는 기능은 개발사과 소통하며 작업할 수 있었던 진귀한 경험이었다. UltraDynamicSky같이 하나로 통합된 환경 구성 볼륨이었다. </div>
+          <div class="bd-test-result"></div>
+        </div>
+      </div>
+
+ 
+
+    </div>
+  </div>
+
+  <!-- 03 CHALLENGES -->
+  <div class="bd-section">
+    <div class="bd-section-label">03 — Challenges</div>
+    <div class="bd-test-grid">
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_ch01.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">01 · Shadow</span>
+            <span class="bd-verdict discard">이슈</span>
+          </div>
+          <div class="bd-test-title">grass wind 기능 썼을 때 그림자 노이즈 이슈</div>
+          <div class="bd-test-desc">원래는 foliage들의 cast shadow가 전부 꺼져있었는데, 시네마틱한 환경을 위해 전부 켜주었다. 풀이 바람에 흩날릴 때마다 그림자에 flickering 현상이 일어났다.</div>
+          <div class="bd-test-result">→ DirectionalLight의 Dynamic shadow Distance MovableLight의 수치를 조절해 해결하였다.</div>
+          <div class="bd-test-result">→ 결국 다시 foliage에서 작은 풀들은 전부 cast shadow를 꺼주었다.😥 조금 산만함 이슈..</div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_ch02.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">02 · Shadow </span>
+            <span class="bd-verdict discard">조정</span>
+          </div>
+          <div class="bd-test-title">Character의 Shadow 각도 조절에 대해</div>
+          <div class="bd-test-desc">Real 3D Character의 그림자는 Hard, Soft 다양하게 그림자를 연출할 수 있지만 Anime 모델링은 Light의 각도에 따라 그림자가 칼같이 떨어지는 게 특징이다. 그런만큼 애매한 각도에서의 shadow를 최대한 지앵해야 한다.
+            크게 고개를 돌린다던지, 액션 컷에선 약간의 자연스러움을 위해 못생기지만 않으면 렘브란트 shadow가 얼굴에 맺히는 정도는 허용하는 것 같다.
+          </div>
+          <div class="bd-test-result">→ 컷마다 한 프레임씩 확인하며 안이쁜 shadow각도, 라인이 없는지 일일히 확인하며 작업의 퀄리티를 높여주었다.</div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_ch03.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">03 · Color</span>
+            <span class="bd-verdict discard">조정</span>
+          </div>
+          <div class="bd-test-title">전체적인 영상의 Tone 유지</div>
+          <div class="bd-test-desc">각기 다른 컨셉의 여러 장소가 나오기때문에, 시퀀스마다 다른 색감으로 Lighting을 했고 영상의 길이가 5분정도로 꽤 길어 작업하다보니 Tone이 들쑥날쑥해지는 이슈가 있었다. </div>
+          <div class="bd-test-result">→ 각 장소마다 두 세개의 OK컷을 기준으로 잡으며 모든 컷들의 Tone을 유지시키려 노력했다. 다음부턴 Light에 쓰이는 색감, 강도 등 기준을 명확히 정한 뒤 어느정도 범위를 정해두고 쓰는 것이 좋겠다. </div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_ch04.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">04 · Render</span>
+            <span class="bd-verdict discard">이슈</span>
+          </div>
+          <div class="bd-test-title">MRQ 오류로 인한 Legacy Render 사용 및 콘솔변수 활용</div>
+          <div class="bd-test-desc">MRQ로 렌더하면 무한로딩되는 이슈가 있어, Legacy Render를 통해 렌더했다. 콘솔변수를 입력하는 칸이 없기 때문에 시퀀스안에 콘솔변수를 입력하여 퀄리티를 올려주었다.</div>
+          <div class="bd-test-result">→ 뷰포트 그대로 렌더되기때문에 r.forcedlod0, r.screenpercentage 200 등 뷰포트 퀄리티에 직접적으로 영향을 줄 수 있는 콘솔들을 활용</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 04 TESTS -->
+  <div class="bd-section">
+    <div class="bd-section-label">04 — Tests &amp; Iterations</div>
+    <div class="bd-test-grid">
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_test01.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Lighting</span>
+            <span class="bd-verdict adopt">R&D</span>
+          </div>
+          <div class="bd-test-title">Anima style character Lighting</div>
+          <div class="bd-test-desc">DirectionalLight가 Key가 되고 보통은 Key와 Rim정도만 캐릭터라이팅으로 추가할 수 있다고 생각했지만, Lighting 각도를 잘 조절하면 캐릭터에 Gradient를 입힐 수 있었다.</div>
+          <div class="bd-test-result">→ 캐릭터가 좀 더 풍부해지고 깊이감을 줄 수 있었다. 자칫하면 매우 어정쩡한 티가 나서 강도를 잘 조절해야했다.</div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_test02.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Lighting Track System</span>
+            <span class="bd-verdict adopt">R&D</span>
+          </div>
+          <div class="bd-test-title">캐릭터를 따라가는 Light Actor</div>
+          <div class="bd-test-desc">그 전까진 Transform 키를 주어 Light Actor가 캐릭터를 따라가도록 조절했는데, 생성만 하면 캐릭터에 붙어 따라가는 개발사의 Custom BluePrint가 있었다.</div>
+          <div class="bd-test-result">→ 잘 활용하여 액션씬에서도 전보다 부담없이 라이팅 할 수 있었다.</div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_test03.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Foliage의 선택 툴</span>
+            <span class="bd-verdict adopt">R&D</span>
+          </div>
+          <div class="bd-test-title">Foliage 편집에서 선택 툴 기능</div>
+          <div class="bd-test-desc">일반 엔진에선 foliage 편집에서 선택 툴 기능은 단순히 foliage 로 심어져있는 actor 하나를 클릭하는 수준이었지만, 커스텀 엔진에선 선택하자 Foliage 리스트에서 선택한 Actor가 어떤 것인지 피드백이 되었다.</div>
+          <div class="bd-test-result">→ 언리얼엔진에서 왜 이런 기본적인 기능을 안넣었는지 의문.. 알고있다면 다음 커스텀 엔진을 만질 기회가 있다면 제안해볼 수 있는 아이디어였다.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+   <!-- 05 NOTES -->
+  <div class="bd-section">
+    <div class="bd-section-label">04 — Notes</div>
+    <div class="bd-notes">
+
+      <p>이렇게 긴 장편의 애니메이션 스타일 시네마틱은 처음이라 초반엔 어려움이 있었지만(커스텀 LightingVolume으로 안하고 엔진 내 기본 Light로 작업이 50% 정도 진행되었지만 다 엎고 다시 진행)
+        팀원들 뿐만 아니라 개발사와도 적극적으로 소통하며 진행했기 때문에 끝까지 완주할 수 있었다.
+      또한 이미 Acrhitect 프로젝트를 진행할 때 한 번 경험해서 그런지 WorldPartition이라 일어나는 문제에 대해 여유있게 대처할 수 있었고 게임 개발사가 만든 오픈월드 맵을
+    엔진 내에서 경험할 수 있다는 건 게임 관련 작업자로서 재밌고 특별한 경험이었다.</p>
+    <p>(일곱개의대죄라는 만화를 다 보았기 때문에 더 재밌게 작업할 수 있었다.) </p>
+     
+    </div>
+  </div>
+
+
+</div>
 
     <!-- VIDEO -->
 
