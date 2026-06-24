@@ -1,4 +1,4 @@
-const detailImages = Array.from(document.querySelectorAll(".detail-grid img"));
+const detailImages = Array.from(document.querySelectorAll(".detail-grid img, .bd-compare-item img"));
 
 if(detailImages.length > 0){
   const lightbox = document.createElement("div");
@@ -86,38 +86,7 @@ if(detailImages.length > 0){
 
 
 
-// CINEMATIC REEL TABS
 
-const reelTabs = document.querySelectorAll(".reel-tab");
-const reelVideo = document.getElementById("reelFrame");
-const reelVideoWrapper = document.querySelector(".video-wrapper");
-
-if(reelVideoWrapper){
-  const reelImage = document.createElement("img");
-  reelImage.src = "thumbnail/reel_2025_2026.webp";
-  reelImage.alt = "2025-2026 Reel Coming Soon";
-  reelImage.style.cssText = "width:100%;border-radius:20px;display:none;";
-  reelVideoWrapper.insertAdjacentElement("afterend", reelImage);
-
-  if(reelTabs.length > 0 && reelVideo){
-    reelTabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const reelIndex = Number(tab.dataset.reel);
-
-        reelTabs.forEach((item) => item.classList.remove("active"));
-        tab.classList.add("active");
-
-        if(reelIndex === 0){
-          reelVideoWrapper.style.display = "block";
-          reelImage.style.display = "none";
-        } else {
-          reelVideoWrapper.style.display = "none";
-          reelImage.style.display = "block";
-        }
-      });
-    });
-  }
-}
 // DETAIL IMAGE TABS
 
 const shotTabs = document.querySelectorAll(".shot-tab");

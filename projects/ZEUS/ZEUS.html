@@ -141,42 +141,233 @@
     *작업한 컷들 중 일부입니다. Selected shots from the project.
     </p>
 
-    <div class="detail-grid">
+ <div class="shot-tabs">
+  <button class="shot-tab active" type="button" data-shot="final">
+    Final Rendering Cut
+  </button>
+  <button class="shot-tab" type="button" data-shot="breakdown">
+    Breakdown
+  </button>
+</div>
+
+<div class="shot-panel active" id="final">
+  <div class="detail-grid">
 
     <!-- MAIN IMAGE -->
 
-    <img src="images/ZEUS_detail01.webp" alt="">
+    <img src="images/Zeus_detail01.webp" alt="">
 
     <!-- SECOND IMAGE -->
 
-    <img src="images/ZEUS_detail02.webp" alt="">
+    <img src="images/Zeus_detail02.webp" alt="">
 
     <!-- THIRD IMAGE -->
 
-    <img src="images/ZEUS_detail03.webp" alt="">
+    <img src="images/Zeus_detail03.webp" alt="">
 
     <!-- FOURTH IMAGE -->
 
-    <img src="images/ZEUS_detail04.webp" alt="">
+    <img src="images/Zeus_detail04.webp" alt="">
 
     <!-- FIFTH IMAGE -->
 
-    <img src="images/ZEUS_detail05.webp" alt="">    
+    <img src="images/Zeus_detail05.webp" alt="">    
     
     <!-- SIXTH IMAGE -->
 
-    <img src="images/ZEUS_detail06.webp" alt="">   
-    <img src="images/ZEUS_detail07.webp" alt="">   
-    <img src="images/ZEUS_detail08.webp" alt="">
-    <img src="images/ZEUS_detail09.webp" alt="">
-    <img src="images/ZEUS_detail10.webp" alt="">
-    <img src="images/ZEUS_detail11.webp" alt="">
-    <img src="images/ZEUS_detail12.webp" alt="">   
+    <img src="images/Zeus_detail06.webp" alt="">   
+    <img src="images/Zeus_detail07.webp" alt="">   
+    <img src="images/Zeus_detail08.webp" alt="">
+    <img src="images/Zeus_detail09.webp" alt="">
+    <img src="images/Zeus_detail10.webp" alt="">
+    <img src="images/Zeus_detail11.webp" alt="">
+    <img src="images/Zeus_detail12.webp" alt="">   
 
   
 
 
     </div>
+      </div>
+    
+<div class="shot-panel" id="breakdown">
+
+  <!-- HEADER -->
+  <div style="position:relative; margin-bottom:52px; border-radius:18px; overflow:hidden;">
+    <img src="images/BD_01.webp" alt="" style="margin-bottom:0; filter:brightness(0.4) blur(2px); transform:scale(1.04); border-radius:0; display:block; width:100%;">
+    <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+  <span style="font-size:15px; font-weight:700; letter-spacing:5px; text-transform:uppercase; color:#fff; opacity:0.75;">Zeus: 오만의 신</span>
+  <span style="font-size:clamp(52px, 8vw, 96px); font-weight:700; letter-spacing:0.06em; color:#fff; line-height:1; text-transform:uppercase;">BREAKDOWN</span>
+</div>
+  </div>
+
+  <!-- 01 LIGHTING PROCESS -->
+  <div class="bd-section">
+    <div class="bd-section-label">01 — Lighting Process</div>
+    <div class="bd-process-grid">
+      <div class="bd-step">
+        <img src="images/Zeus_BD_process01.webp" alt="">
+        <span class="bd-step-tag">01</span>
+      </div>
+      <div class="bd-step">
+        <img src="images/Zeus_BD_process02.webp" alt="">
+        <span class="bd-step-tag">02</span>
+      </div>
+      <div class="bd-step">
+        <img src="images/Zeus_BD_process03.webp" alt="">
+        <span class="bd-step-tag">03</span>
+      </div>
+      <div class="bd-step">
+        <img src="images/Zeus_BD_process04.webp" alt="">
+        <span class="bd-step-tag">04</span>
+      </div>
+    </div>
+  </div>
+
+<!-- 02 PBL & EXPOSURE -->
+  <div class="bd-section">
+    <div class="bd-section-label">02 — PBL &amp; Exposure Values</div>
+    <div class="bd-test-grid">
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_pbl01.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Exposure</span>
+            <span class="bd-verdict adopt">조정</span>
+          </div>
+          <div class="bd-test-title">PBL physically based lighting </div>
+          <div class="bd-test-desc">1200~1400 시간대에 Sun EV와 Sky EV 값을 맞춰주었다.</div>
+          <div class="bd-test-result">directional light intensity 85000lux / EV min 11.5 / max 12.5 </div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_pbl02.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Mid tone 18% grey</span>
+            <span class="bd-verdict adopt">조정</span>
+          </div>
+          <div class="bd-test-title">18% grey 값의 평균은 0.193 </div>
+          <div class="bd-test-desc">18% grey 값의 평균은 0.193 정도로 0.18보다 높지만 전반적으로 밝은 정오의 분위기를 위해 유지했다.</div>
+          <div class="bd-test-result"></div>
+        </div>
+      </div>
+
+ 
+
+    </div>
+  </div>
+
+  <!-- 03 CHALLENGES -->
+  <div class="bd-section">
+    <div class="bd-section-label">03 — Challenges</div>
+    <div class="bd-test-grid">
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_ch01.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">01 · Texture</span>
+            <span class="bd-verdict discard">이슈</span>
+          </div>
+          <div class="bd-test-title">Virtual Texture Convert 이슈</div>
+          <div class="bd-test-desc">캐릭터들에 적용된 Material Instance의 Master Material들에 Normal Texture라던지 Base Color Texture라던지 가끔 혼자서 Virtual로 바뀌어있을 때가 있다. 
+          분명 일반으로 바꾼 뒤 저장을 해도 Editor를 껐다 키면 다시 돌아오는 이슈가 있었다. </div>
+          <div class="bd-test-result">→ Master Material을 복제하고 수정하여 적용했다. 이슈는 사라졌지만 여러 Master Material에서 동시다발적으로 발생했고 이유를 찾지 못하였다.</div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_ch02.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">02 · Render</span>
+            <span class="bd-verdict discard">이슈</span>
+          </div>
+          <div class="bd-test-title">Unreal engine 5.7에서 Anti 2 이상일 때 Rendering 이슈</div>
+          <div class="bd-test-desc">Anti 2 이상일 때 카메라가 다음 컷으로 넘어갈 때(다수의 camera cut이 하나의 Shot으로 묶여있어도)
+            Rendering 결과물이 첫 컷 제외하고 저장이 안되는 이슈가 발생했다.
+            game overrides, DLSS 등 다양한 Render옵션을 끄거나 바꿔봐도 문제는 Antialiasing 숫자가 2 이상일 때 나타났다.
+          </div>
+          <div class="bd-test-result">→ 각 camera cut 범위마다 MRQ에서 Queue 설정을 해주었다. 자동으로 기능이 있으면 좋겠어서 사내 개발자와 협업하여 툴을 만들었다.
+            Shot 기반으로 나눠주기 때문에 Shot 안에 다수의 camera cut이 있다면 오류가 났고, 그런 부분은 손수 입력해주어 해결했다.
+            따라오는 장점은 수정사항이 있을 때 해당 컷만 렌더하기 편하다는 점이었다.
+          </div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_ch03.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">03 · Eye</span>
+            <span class="bd-verdict discard">이슈</span>
+          </div>
+          <div class="bd-test-title">volumetric fog와 Eye Material</div>
+          <div class="bd-test-desc">volumetric fog 안에 캐릭터의 눈동자 흰자 부분이 눈에 띄게 밝아지는 이슈가 있었다.</div>
+          <div class="bd-test-result">→ Eye Master Material에 들어가 노드를 수정해주었다.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 04 TESTS -->
+  <div class="bd-section">
+    <div class="bd-section-label">04 — Tests &amp; Iterations</div>
+    <div class="bd-test-grid">
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_test01.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Lighting</span>
+            <span class="bd-verdict adopt">test</span>
+          </div>
+          <div class="bd-test-title">CloudLighting plugin</div>
+          <div class="bd-test-desc">항상 Sky와 Volumetric Cloud를 세팅할 때 태양에 비춰지는 구름의 shape이 중요했다. 하늘을 이쁘게 하자니 캐릭터의 key light가 애매해졌고 그 반대의 상황에서도 아쉬웠다.  
+          cloud에 따로 Lighting을 할 수 있는 plugin이 있어, 적극 사용하게 되었다. 물론 directional보다 cloud의 shape이 아쉽긴 했지만 충분히 좋은 도구였다.</div>
+          <div class="bd-test-result">→ fab에 있는 CloudLighting Plugin을 통해 하늘을 좀 더 자유도 높게 디자인할 수 있었다.</div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_test02.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">Lighting</span>
+            <span class="bd-verdict discard">test</span>
+          </div>
+          <div class="bd-test-title">Diffuse, Specular Scale</div>
+          <div class="bd-test-desc">하늘을 밝게하려면 DirectionalLight의 intensity, SkyAtmosphere, VolumetricCloud 등 다양한 방법이 존재한다.
+            문제는 하늘의 색감을 맞추다보면 캐릭터의 피부가 너무 밝아지는 이슈가 있는데, DirectionalLight의 옵션 중 Diffuse Scale을 살짝 줄여주면
+            사람의 피부나 object의 Base Color값이 안정화됐다.
+            
+          </div>
+          <div class="bd-test-result">→ 이런 조치는 당장은 괜찮지만 후에 안좋은 옵션이 될 것 같아, 보류하고 하늘의 색감은 SkyAtmosphere로 조정했다. </div>
+        </div>
+      </div>
+
+      <div class="bd-test-card">
+        <div class="bd-test-img"><img src="images/BD_test03.webp" alt=""></div>
+        <div class="bd-test-body">
+          <div class="bd-test-row">
+            <span class="bd-test-cat">VDB</span>
+            <span class="bd-verdict adopt">test</span>
+          </div>
+          <div class="bd-test-title">Zibra vdb로 구름 세팅</div>
+          <div class="bd-test-desc">ZibraVDB는 Unreal Engine과 Houdini용 실시간 볼류메트릭 압축 플러그인이다.
+            압축 방식은 Unreal의 Streaming Virtual Texturing(SVT)보다 2배 빠른 렌더링 속도를 낸다. </div>
+          <div class="bd-test-result">→ Zeus가 나오는 cut에 적극 활용했다. sky가 주가되는 룩에선 활용도가 아주 높기때문에 다음번에도 잘 활용하여 쓸 예정이다.</div>
+        </div>
+      </div>
+
+      
+
+    </div>
+  </div>
+ </div>
 
     <!-- VIDEO -->
 
